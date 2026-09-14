@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="supported-color-schemes" content="dark" />
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
     <title>Electricity Payment Successful</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,14 +14,14 @@
     />
     <style>
       @media (max-width: 500px) {
-        .main-card-two {
-          flex-direction: column;
+        .card {
+          padding: 24px 20px !important;
         }
         .stack-col {
           display: block !important;
           width: 100% !important;
           text-align: left !important;
-          padding: 0 0 14px 0 !important;
+          padding: 0 0 12px 0 !important;
         }
         .sm-hero {
           font-size: 20px !important;
@@ -44,176 +44,120 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-      background-color: #04160e;
-      color: #ffffff;
+      background-color: #f0f0f0;
+      color: #333333;
     "
   >
-    <div class="main" style="width: 90%; max-width: 600px; margin: auto">
-      <div class="icon" style="margin: 2rem 0rem">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td>
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table; vertical-align: middle">
-                <tr>
-                  <td
-                    style="
-                      width: 32px;
-                      height: 32px;
-                      border-radius: 8px;
-                      background-color: #329661;
-                      background: linear-gradient(135deg, #7bbe5e 0%, #329661 100%);
-                      text-align: center;
-                      line-height: 32px;
-                      font-family: 'Work Sans', sans-serif;
-                      font-weight: 700;
-                      font-size: 15px;
-                      color: #ffffff;
-                    "
-                  >
-                    S
-                  </td>
-                  <td style="padding-left: 8px; font-family: 'Work Sans', sans-serif; font-size: 18px; color: #ffffff">
-                    <span style="font-weight: 700">Sync</span><span style="font-weight: 400">360</span>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="main-icon" style="margin: 2rem 0; text-align: center">
-        <p style="font-size: 48px; margin: 0; line-height: 1">&#128161;</p>
-        <p class="sm-hero" style="font-weight: 700; font-size: 24px; margin: 1rem 0; color: #ffffff">
-          Electricity payment successful
-        </p>
-      </div>
+    <div class="main" style="width: 92%; max-width: 600px; margin: 0 auto; padding: 32px 0 40px 0">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; border-collapse: collapse">
+        <tr>
+          <td align="left" valign="middle" style="text-align: left; vertical-align: middle">
+            <img src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/unt6glyp494d11541k6w257da3zdyw5xuddqzsrd.png" alt="Sync360" height="36" border="0" style="height: 36px; display: block; border: 0" />
+          </td>
+          <td align="right" valign="middle" style="text-align: right; vertical-align: middle">
+            <a href="https://web.facebook.com/Sync360" style="text-decoration: none"><img src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/21r60yntn1liifee815w2bik1klhznpys59pxbeo.png" alt="Facebook" width="24" border="0" style="width: 24px; display: inline-block; vertical-align: middle; border: 0; margin-left: 14px" /></a>
+            <a href="https://www.instagram.com/Sync360_hq/" style="text-decoration: none"><img src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/t5j9v8slumdaania2c68dz8wc568q4mibrgkugrz.png" alt="Instagram" width="24" border="0" style="width: 24px; display: inline-block; vertical-align: middle; border: 0; margin-left: 14px" /></a>
+            <a href="https://www.linkedin.com/company/Sync360" style="text-decoration: none"><img src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/234hzl4mhp3ls52xzcp5vwu140u4ux9k41jxn2f9.png" alt="LinkedIn" width="24" border="0" style="width: 24px; display: inline-block; vertical-align: middle; border: 0; margin-left: 14px" /></a>
+          </td>
+        </tr>
+      </table>
 
       <div
-        class="primary-text"
+        class="card"
         style="
-          font-weight: 400;
+          background-color: #ffffff;
+          border-radius: 6px;
+          padding: 36px 32px;
+          margin-top: 28px;
           font-size: 16px;
-          line-height: 24px;
-          letter-spacing: -0.44px;
-          color: #d3e3d8;
+          line-height: 25px;
+          color: #333333;
         "
       >
+        <div class="main-icon" style="text-align: center; margin: 0 0 28px 0">
+          <p style="font-size: 44px; margin: 0; line-height: 1">&#128161;</p>
+          <p class="sm-hero" style="font-weight: 700; font-size: 22px; line-height: 30px; margin: 14px 0 0 0; color: #1a1a1a">
+            Electricity payment successful
+          </p>
+        </div>
         <p style="margin: 0 0 16px 0">Hello {{first_name}},</p>
         <p style="margin: 0 0 16px 0">Your electricity payment went through. Here&rsquo;s your receipt.</p>
         <div
           style="
-            background-color: #0d261c;
-            border: 1px solid #1c4633;
+            background-color: #f4f8f5;
+            border: 1px solid #e3ede7;
+            border-radius: 6px;
             padding: 24px 20px;
-            border-radius: 8px;
             margin: 24px 0;
             text-align: center;
           "
         >
-          <p style="margin: 0 0 8px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #9db5a6">
+          <p style="margin: 0 0 8px 0; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #8a8a8a">
             Amount
           </p>
-          <p style="margin: 0; font-size: 30px; font-weight: 900; color: #ffffff">&#8358;{{amount}}</p>
+          <p style="margin: 0; font-size: 28px; font-weight: 700; color: #1a1a1a">&#8358;{{amount}}</p>
         </div>
         <div
           style="
-            background-color: #0d261c;
-            border: 1px solid #1c4633;
+            background-color: #f4f8f5;
+            border: 1px solid #e3ede7;
+            border-radius: 6px;
             padding: 24px 20px;
-            border-radius: 8px;
             margin: 24px 0;
             text-align: center;
           "
         >
-          <p style="margin: 0 0 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #9db5a6">
+          <p style="margin: 0 0 10px 0; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #8a8a8a">
             Your token
           </p>
-          <p style="margin: 0; font-size: 30px; font-weight: 900; letter-spacing: 6px; color: #7bbe5e">
+          <p style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: 6px; color: #329661">
             {{token}}
           </p>
         </div>
         <div
           style="
-            background-color: #0d261c;
-            border: 1px solid #1c4633;
+            background-color: #f4f8f5;
+            border: 1px solid #e3ede7;
+            border-radius: 6px;
             padding: 20px;
-            border-radius: 8px;
             margin: 20px 0;
           "
         >
-          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0; color: #ffffff">
-            Transaction details
-          </p>
-          <p style="margin: 0 0 8px 0"><strong style="color: #7bbe5e">Provider:</strong> {{provider}}</p>
-          <p style="margin: 0 0 8px 0"><strong style="color: #7bbe5e">Meter number:</strong> {{meter_number}}</p>
-          <p style="margin: 0 0 8px 0"><strong style="color: #7bbe5e">Reference:</strong> {{reference}}</p>
-          <p style="margin: 0 0 8px 0"><strong style="color: #7bbe5e">Date:</strong> {{transaction_date}}</p>
+          <p style="margin: 0 0 14px 0; font-weight: 700; font-size: 16px; color: #1a1a1a">Transaction details</p>
+          <p style="margin: 0 0 8px 0"><strong style="color: #1a1a1a">Provider:</strong> {{provider}}</p>
+          <p style="margin: 0 0 8px 0"><strong style="color: #1a1a1a">Meter number:</strong> {{meter_number}}</p>
+          <p style="margin: 0 0 8px 0"><strong style="color: #1a1a1a">Reference:</strong> {{reference}}</p>
+          <p style="margin: 0 0 8px 0"><strong style="color: #1a1a1a">Date:</strong> {{transaction_date}}</p>
         </div>
-        <p style="margin: 24px 0 0 0">Best regards,<br />The Sync360 Team</p>
+        <p style="margin: 26px 0 0 0">Best regards,<br />The Sync360 Team</p>
       </div>
 
-      <div
-        class="footer"
-        style="margin-bottom: 0; padding: 1rem; background-color: #0d261c; margin-top: 2rem; border-radius: 8px"
-      >
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
+      <div class="footer" style="padding: 32px 4px 8px 4px">
+        <p style="margin: 0 0 18px 0; font-size: 15px; line-height: 24px; color: #333333">
+          Sync360 at the touch of a button! Download our app for Google &amp; App store.
+        </p>
+
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin-bottom: 24px">
           <tr>
-            <td class="stack-col" style="text-align: left; width: 50%; vertical-align: middle">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table; vertical-align: middle">
-                <tr>
-                  <td
-                    style="
-                      width: 28px;
-                      height: 28px;
-                      border-radius: 7px;
-                      background-color: #329661;
-                      background: linear-gradient(135deg, #7bbe5e 0%, #329661 100%);
-                      text-align: center;
-                      line-height: 28px;
-                      font-family: 'Work Sans', sans-serif;
-                      font-weight: 700;
-                      font-size: 13px;
-                      color: #ffffff;
-                    "
-                  >
-                    S
-                  </td>
-                  <td style="padding-left: 8px; font-family: 'Work Sans', sans-serif; font-size: 15px; color: #ffffff">
-                    <span style="font-weight: 700">Sync</span><span style="font-weight: 400">360</span>
-                  </td>
-                </tr>
-              </table>
+            <td style="padding-right: 12px">
+              <a href="{{play_store_url}}" style="text-decoration: none"><img src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/8kedz0m4e9wfxbz5xd4m7hz9djlqkqvowlgzdmd0.png" alt="Get it on Google Play" height="44" border="0" style="height: 44px; display: block; border: 0" /></a>
             </td>
-            <td class="stack-col" style="text-align: right; width: 50%; vertical-align: middle">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table">
-                <tr>
-                  <td style="padding-right: 13px">
-                    <a href="https://web.facebook.com/Sync360" style="color: #9db5a6; text-decoration: none; font-size: 13px">Facebook</a>
-                  </td>
-                  <td style="padding-right: 13px">
-                    <a href="https://www.instagram.com/Sync360_hq/" style="color: #9db5a6; text-decoration: none; font-size: 13px">Instagram</a>
-                  </td>
-                  <td>
-                    <a href="https://www.linkedin.com/company/Sync360" style="color: #9db5a6; text-decoration: none; font-size: 13px">LinkedIn</a>
-                  </td>
-                </tr>
-              </table>
+            <td>
+              <a href="{{app_store_url}}" style="text-decoration: none"><img src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/5fpcqku9we9v2mnux00j2ix0tfa66qn8udnfj9cn.png" alt="Download on the App Store" height="44" border="0" style="height: 44px; display: block; border: 0" /></a>
             </td>
           </tr>
         </table>
 
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin-top: 2rem">
-          <tr>
-            <td style="text-align: left">
-              <p style="color: #9db5a6; margin: 0 0 6px 0">Contact us:</p>
-              <p style="color: #9db5a6; margin: 0; font-size: 14px; line-height: 22px">
-                +234 201 889 1813 or click on
-                <a href="https://www.sync360.tech" style="color: #7bbe5e">www.sync360.tech</a> if you
-                prefer not to receive this message you can unsubscribe
-              </p>
-            </td>
-          </tr>
-        </table>
+        <p style="margin: 0 0 10px 0; font-size: 14px; line-height: 22px; color: #333333">
+          Questions? Contact us at <a href="mailto:support@sync360.africa" style="color: #329661; text-decoration: none">support@sync360.africa</a>
+          or +234 201 889 1813.
+        </p>
+        <p style="margin: 0; font-size: 13px; line-height: 21px; color: #8a8a8a">
+          <a href="https://www.sync360.tech" style="color: #8a8a8a">www.sync360.tech</a>
+          &nbsp;&middot;&nbsp;
+          <a href="{{unsubscribe_url}}" style="color: #8a8a8a">Unsubscribe</a><br />
+          &copy; Sync360 2026
+        </p>
       </div>
     </div>
   </body>
