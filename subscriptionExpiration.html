@@ -3,17 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OTP Verification</title>
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <title>Your Plan Expires Soon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Work+Sans:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
       @media (max-width: 500px) {
         .main-card-two {
           flex-direction: column;
+        }
+        .stack-col {
+          display: block !important;
+          width: 100% !important;
+          text-align: left !important;
+          padding: 0 0 14px 0 !important;
+        }
+        .sm-hero {
+          font-size: 20px !important;
+        }
+        .item-row .item-name p {
+          font-size: 15px !important;
+        }
+        .item-row .item-price {
+          width: 92px !important;
+        }
+        .item-row .item-price p {
+          font-size: 15px !important;
         }
       }
     </style>
@@ -23,115 +43,145 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Nunito Sans', sans-serif;
-      background-color: #fff;
+      font-family: 'Inter', sans-serif;
+      background-color: #04160e;
+      color: #ffffff;
     "
   >
-    <div class="main" style="width: 90%; margin: auto">
-      <div
-        class="main-card"
-        style="
-          background: #f2f2f2;
-          padding: 1rem;
-          width: 80%;
-          margin: 2rem auto;
-          border-top-left-radius: 12px;
-          border-top-right-radius: 12px;
-          text-align: center;
-        "
-      >
-        <table align="center" style="margin: 0 auto">
+    <div class="main" style="width: 90%; max-width: 600px; margin: auto">
+      <div class="icon" style="margin: 2rem 0rem">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="text-align: center">
-              <img
-                src="assets/Sync6.png"
-                alt="icon"
-                style="height: 60px; width: 100px; object-fit: cover"
-              />
+            <td>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table; vertical-align: middle">
+                <tr>
+                  <td
+                    style="
+                      width: 32px;
+                      height: 32px;
+                      border-radius: 8px;
+                      background-color: #329661;
+                      background: linear-gradient(135deg, #7bbe5e 0%, #329661 100%);
+                      text-align: center;
+                      line-height: 32px;
+                      font-family: 'Work Sans', sans-serif;
+                      font-weight: 700;
+                      font-size: 15px;
+                      color: #ffffff;
+                    "
+                  >
+                    S
+                  </td>
+                  <td style="padding-left: 8px; font-family: 'Work Sans', sans-serif; font-size: 18px; color: #ffffff">
+                    <span style="font-weight: 700">Sync</span><span style="font-weight: 400">360</span>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
         </table>
       </div>
+      <div class="main-icon" style="margin: 2rem 0; text-align: center">
+        <p style="font-size: 48px; margin: 0; line-height: 1">&#8987;</p>
+        <p class="sm-hero" style="font-weight: 700; font-size: 24px; margin: 1rem 0; color: #ffffff">
+          Your plan expires soon
+        </p>
+      </div>
 
-      <div style="width: 80%; padding: 1rem; margin: 0rem auto">
+      <div
+        class="primary-text"
+        style="
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.44px;
+          color: #d3e3d8;
+        "
+      >
+        <p style="margin: 0 0 16px 0">Hello {{first_name}},</p>
+        <p style="margin: 0 0 16px 0">Heads-up! Your current SYNC360 plan is coming to an end. Don&rsquo;t lose access to your dashboard, sales records and automation tools.</p>
         <div
-          class="primary-text"
           style="
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: -0.44px;
+            background-color: #0d261c;
+            border: 1px solid #1c4633;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
           "
         >
-          <p style="margin-top: 2rem">
-            Hi [name]<br />
-            <br />
-
-            <span style="font-size: 17px; font-weight: 900">
-              Heads-up! Your current SYNC360 plan will expire on [Expiration
-              Date]. Don’t lose access to your dashboard, sales records, and
-              automation tools.
-            </span>
-
-            <br />
-
-            👉 [Renew Now] to stay in control. Need help choosing a plan? We’re
-            here for you.
-
-            <br />
-            <br />
-            Love,
-            <br />
-            <br />
-            The Sync360 Team.
+          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0; color: #ffffff">
+            Plan details
           </p>
+          <p style="margin: 0 0 8px 0"><strong style="color: #7bbe5e">Plan:</strong> {{plan_name}}</p>
+          <p style="margin: 0 0 8px 0"><strong style="color: #7bbe5e">Expires on:</strong> {{expiration_date}}</p>
         </div>
+        <div style="margin: 2.5rem 0">
+          <a
+            href="{{renew_url}}"
+            style="
+              display: block;
+              width: 100%;
+              background-color: #329661;
+              background: linear-gradient(135deg, #7bbe5e 0%, #329661 100%);
+              color: #ffffff;
+              text-align: center;
+              padding: 14px 0;
+              border-radius: 24px;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 700;
+            "
+          >
+            Renew now
+          </a>
+        </div>
+        <p style="margin: 0 0 16px 0">Need help choosing a plan? We&rsquo;re here for you.</p>
+        <p style="margin: 24px 0 0 0">Best regards,<br />The Sync360 Team</p>
       </div>
 
       <div
         class="footer"
-        style="margin-bottom: 0; padding: 1rem; background-color: #f2f2f2"
+        style="margin-bottom: 0; padding: 1rem; background-color: #0d261c; margin-top: 2rem; border-radius: 8px"
       >
-        <table style="width: 100%">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
           <tr>
-            <td style="text-align: left; width: 50%">
-              <img
-                src="assets/Sync6.png"
-                alt="icon"
-                style="height: 60px; width: 100px; object-fit: cover"
-              />
+            <td class="stack-col" style="text-align: left; width: 50%; vertical-align: middle">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table; vertical-align: middle">
+                <tr>
+                  <td
+                    style="
+                      width: 28px;
+                      height: 28px;
+                      border-radius: 7px;
+                      background-color: #329661;
+                      background: linear-gradient(135deg, #7bbe5e 0%, #329661 100%);
+                      text-align: center;
+                      line-height: 28px;
+                      font-family: 'Work Sans', sans-serif;
+                      font-weight: 700;
+                      font-size: 13px;
+                      color: #ffffff;
+                    "
+                  >
+                    S
+                  </td>
+                  <td style="padding-left: 8px; font-family: 'Work Sans', sans-serif; font-size: 15px; color: #ffffff">
+                    <span style="font-weight: 700">Sync</span><span style="font-weight: 400">360</span>
+                  </td>
+                </tr>
+              </table>
             </td>
-            <td style="text-align: right; width: 50%">
-              <table style="display: inline-table">
+            <td class="stack-col" style="text-align: right; width: 50%; vertical-align: middle">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table">
                 <tr>
                   <td style="padding-right: 13px">
-                    <a href="https://web.facebook.com/Sync360">
-                      <img
-                        src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/21r60yntn1liifee815w2bik1klhznpys59pxbeo.png"
-                        alt="fb"
-                        style="display: inline-block; vertical-align: middle"
-                      />
-                    </a>
+                    <a href="https://web.facebook.com/Sync360" style="color: #9db5a6; text-decoration: none; font-size: 13px">Facebook</a>
                   </td>
                   <td style="padding-right: 13px">
-                    <a
-                      href="https://www.instagram.com/Sync360_hq?igsh=MWljc3k1ZjRkZ3hrYQ=="
-                    >
-                      <img
-                        src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/t5j9v8slumdaania2c68dz8wc568q4mibrgkugrz.png"
-                        alt="in"
-                        style="display: inline-block; vertical-align: middle"
-                      />
-                    </a>
+                    <a href="https://www.instagram.com/Sync360_hq/" style="color: #9db5a6; text-decoration: none; font-size: 13px">Instagram</a>
                   </td>
                   <td>
-                    <a href="https://www.linkedin.com/company/Sync360">
-                      <img
-                        src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/234hzl4mhp3ls52xzcp5vwu140u4ux9k41jxn2f9.png"
-                        alt="ln"
-                        style="display: inline-block; vertical-align: middle"
-                      />
-                    </a>
+                    <a href="https://www.linkedin.com/company/Sync360" style="color: #9db5a6; text-decoration: none; font-size: 13px">LinkedIn</a>
                   </td>
                 </tr>
               </table>
@@ -139,14 +189,14 @@
           </tr>
         </table>
 
-        <table style="width: 100%; margin-top: 2rem">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin-top: 2rem">
           <tr>
             <td style="text-align: left">
-              <p>Contact us:</p>
-              <p>
-                +2342018891813 or click on
-                <a href="#">www.Sync360.tech</a> if you prefer not to receive
-                this message you can unsubscribe
+              <p style="color: #9db5a6; margin: 0 0 6px 0">Contact us:</p>
+              <p style="color: #9db5a6; margin: 0; font-size: 14px; line-height: 22px">
+                +234 201 889 1813 or click on
+                <a href="https://www.sync360.tech" style="color: #7bbe5e">www.sync360.tech</a> if you
+                prefer not to receive this message you can unsubscribe
               </p>
             </td>
           </tr>

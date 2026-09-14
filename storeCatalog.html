@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
     <title>Shop at {{store_name}}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Work+Sans:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -15,42 +17,46 @@
         .main-card-two {
           flex-direction: column;
         }
-
-        .product-row td {
+        .stack-col {
           display: block !important;
           width: 100% !important;
           text-align: left !important;
+          padding: 0 0 14px 0 !important;
         }
-
-        .product-price {
-          padding-top: 8px !important;
+        .sm-hero {
+          font-size: 20px !important;
+        }
+        .item-row .item-name p {
+          font-size: 15px !important;
+        }
+        .item-row .item-price {
+          width: 92px !important;
+        }
+        .item-row .item-price p {
+          font-size: 15px !important;
         }
       }
     </style>
   </head>
-
   <body
     style="
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Nunito Sans', sans-serif;
-      background-color: #fff;
+      font-family: 'Inter', sans-serif;
+      background-color: #04160e;
+      color: #ffffff;
     "
   >
-    <div class="main" style="width: 90%; margin: auto">
-      <div
-        class="icon"
-        style="display: flex; justify-content: flex-start; margin: 2rem 0rem"
-      >
+    <div class="main" style="width: 90%; max-width: 600px; margin: auto">
+      <div class="icon" style="margin: 2rem 0rem">
         <img
           src="{{store_logo}}"
           alt="{{store_name}}"
-          style="max-height: 48px"
+          style="max-height: 48px; display: block; border: 0"
         />
       </div>
 
-      <!-- Store banner -->
       <div class="banner" style="margin: 1rem 0">
         <img
           src="{{store_banner}}"
@@ -61,15 +67,16 @@
             object-fit: cover;
             border-radius: 12px;
             display: block;
+            border: 0;
           "
         />
       </div>
-
       <div class="main-icon" style="margin: 2rem 0; text-align: center">
-        <p style="font-weight: 700; font-size: 24px; margin: 1rem 0">
+        <p style="font-size: 48px; margin: 0; line-height: 1">&#128717;&#65039;</p>
+        <p class="sm-hero" style="font-weight: 700; font-size: 24px; margin: 1rem 0; color: #ffffff">
           {{store_name}}
         </p>
-        <p style="font-size: 16px; color: #555; margin: 0">{{tag_line}}</p>
+        <p style="font-size: 16px; color: #9db5a6; margin: 0">{{tag_line}}</p>
       </div>
 
       <div
@@ -79,25 +86,22 @@
           font-size: 16px;
           line-height: 24px;
           letter-spacing: -0.44px;
+          color: #d3e3d8;
         "
       >
-        <p>Hello {{customer_name}},</p>
-        <br />
-        <p>{{store_description}}</p>
-
-        <br />
-
-        <!-- Categories -->
+        <p style="margin: 0 0 16px 0">Hello {{customer_name}},</p>
+        <p style="margin: 0 0 16px 0">{{store_description}}</p>
         <div
           style="
-            background-color: {{theme_surface}};
+            background-color: #0d261c;
+            border: 1px solid #1c4633;
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
           "
         >
-          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0">
-            Shop by Category:
+          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0; color: #ffffff">
+            Shop by category
           </p>
           {% for category in categories %}
           <span
@@ -105,36 +109,35 @@
               display: inline-block;
               padding: 6px 14px;
               margin: 0 8px 8px 0;
-              border: 1px solid {{theme_primary}};
+              border: 1px solid #7bbe5e;
               border-radius: 20px;
               font-size: 14px;
-              color: {{theme_primary}};
+              color: #7bbe5e;
             "
             >{{category.name}}</span
           >
           {% endfor %}
         </div>
-
-        <!-- Products -->
         <div
           style="
-            background-color: #f8f9fa;
+            background-color: #0d261c;
+            border: 1px solid #1c4633;
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
           "
         >
-          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0">
-            Available Products:
+          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0; color: #ffffff">
+            Available products
           </p>
-
           {% for product in products %}
           <table
             class="product-row"
+            role="presentation" cellpadding="0" cellspacing="0" border="0"
             style="width: 100%; margin-bottom: 18px; border-collapse: collapse"
           >
             <tr>
-              <td style="width: 80px; vertical-align: top">
+              <td style="width: 86px; vertical-align: top">
                 <img
                   src="{{product.image}}"
                   alt="{{product.name}}"
@@ -143,16 +146,17 @@
                     height: 72px;
                     object-fit: cover;
                     border-radius: 6px;
-                    background-color: #ececec;
+                    background-color: #1c4633;
                     display: block;
+                    border: 0;
                   "
                 />
               </td>
               <td style="vertical-align: top; padding-left: 14px">
-                <p style="font-weight: 700; font-size: 16px; margin: 0">
+                <p style="font-weight: 700; font-size: 16px; margin: 0; color: #ffffff">
                   {{product.name}}
                 </p>
-                <p style="font-size: 14px; color: #777; margin: 4px 0 0 0">
+                <p style="font-size: 14px; color: #9db5a6; margin: 4px 0 0 0">
                   SKU: {{product.sku}}
                 </p>
               </td>
@@ -160,7 +164,7 @@
                 class="product-price"
                 style="text-align: right; vertical-align: top; width: 110px"
               >
-                <p style="font-weight: 700; font-size: 16px; margin: 0">
+                <p style="font-weight: 700; font-size: 16px; margin: 0; color: #7bbe5e">
                   {{currency}} {{product.price}}
                 </p>
               </td>
@@ -168,131 +172,117 @@
           </table>
           {% endfor %}
 
-          <p style="font-size: 14px; color: #777; margin: 0">
+          <p style="font-size: 14px; color: #9db5a6; margin: 0">
             Showing {{product_count}} of {{total}} products.
           </p>
         </div>
-
-        <!-- Delivery -->
         <div
           style="
-            background-color: #f8f9fa;
+            background-color: #0d261c;
+            border: 1px solid #1c4633;
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
           "
         >
-          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0">
-            Delivery Locations:
+          <p style="font-weight: 700; font-size: 18px; margin: 0 0 15px 0; color: #ffffff">
+            Delivery locations
           </p>
           {% for rate in shipping %}
-          <table style="width: 100%; margin-bottom: 8px">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin-bottom: 8px">
             <tr>
               <td style="text-align: left">{{rate.location}}</td>
-              <td style="text-align: right; font-weight: 700">
+              <td style="text-align: right; font-weight: 700; color: #7bbe5e">
                 {{currency}} {{rate.amount}}
               </td>
             </tr>
           </table>
           {% endfor %}
         </div>
-
-        <!-- Store CTA -->
         <div style="margin: 2.5rem 0">
           <a
             href="{{store_link}}"
             style="
               display: block;
               width: 100%;
-              background-color: {{theme_primary}};
-              color: {{theme_on_primary}};
+              background-color: #329661;
+              background: linear-gradient(135deg, #7bbe5e 0%, #329661 100%);
+              color: #ffffff;
               text-align: center;
               padding: 14px 0;
-              border-radius: 6px;
+              border-radius: 24px;
               text-decoration: none;
               font-size: 16px;
               font-weight: 700;
             "
           >
-            Visit Store
+            Visit store
           </a>
         </div>
-
-        <p>
-          Need help with an order? Chat with us on WhatsApp at
-          <a href="{{whatsapp_link}}">{{whatsapp_number}}</a> or visit us at
-          {{store_street}}, {{store_city}}, {{store_state}}.
-        </p>
-
-        <br />
-        Thank you for shopping with us. 💚<br /><br />
-
-        Warm regards,<br />
-        The {{store_name}} Team<br />
-        Powered by Sync360
+        <p style="margin: 0 0 16px 0">Need help with an order? Chat with us on WhatsApp at <a href="{{whatsapp_link}}" style="color: #7bbe5e">{{whatsapp_number}}</a> or visit us at {{store_street}}, {{store_city}}, {{store_state}}.</p>
+        <p style="margin: 0 0 16px 0">Thank you for shopping with us. &#128154;</p>
+        <p style="margin: 24px 0 0 0">Warm regards,<br />The {{store_name}} Team</p>
+        <p style="margin: 6px 0 0 0; color: #9db5a6; font-size: 14px">Powered by Sync360</p>
       </div>
 
       <div
         class="footer"
-        style="
-          margin-bottom: 0;
-          padding: 1rem;
-          background-color: #f2f2f2;
-          margin-top: 2rem;
-        "
+        style="margin-bottom: 0; padding: 1rem; background-color: #0d261c; margin-top: 2rem; border-radius: 8px"
       >
-        <table style="width: 100%">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%">
           <tr>
-            <td style="text-align: left; width: 50%">
-              <img
-                src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/z9yca91y20bzw2v3uju5yzjcxh2uojzda5e2xch0.png"
-                alt="{{store_name}}"
-                style="display: inline-block; vertical-align: middle"
-              />
+            <td class="stack-col" style="text-align: left; width: 50%; vertical-align: middle">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table; vertical-align: middle">
+                <tr>
+                  <td
+                    style="
+                      width: 28px;
+                      height: 28px;
+                      border-radius: 7px;
+                      background-color: #329661;
+                      background: linear-gradient(135deg, #7bbe5e 0%, #329661 100%);
+                      text-align: center;
+                      line-height: 28px;
+                      font-family: 'Work Sans', sans-serif;
+                      font-weight: 700;
+                      font-size: 13px;
+                      color: #ffffff;
+                    "
+                  >
+                    S
+                  </td>
+                  <td style="padding-left: 8px; font-family: 'Work Sans', sans-serif; font-size: 15px; color: #ffffff">
+                    <span style="font-weight: 700">Sync</span><span style="font-weight: 400">360</span>
+                  </td>
+                </tr>
+              </table>
             </td>
-            <td style="text-align: right; width: 50%">
-              <table style="display: inline-table">
+            <td class="stack-col" style="text-align: right; width: 50%; vertical-align: middle">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display: inline-table">
                 <tr>
                   <td style="padding-right: 13px">
-                    <a href="https://web.facebook.com/Sync360">
-                      <img
-                        src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/21r60yntn1liifee815w2bik1klhznpys59pxbeo.png"
-                        alt="facebook"
-                        style="display: inline-block; vertical-align: middle"
-                      />
-                    </a>
+                    <a href="https://web.facebook.com/Sync360" style="color: #9db5a6; text-decoration: none; font-size: 13px">Facebook</a>
                   </td>
                   <td style="padding-right: 13px">
-                    <a href="https://www.instagram.com/Sync360_hq/">
-                      <img
-                        src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/t5j9v8slumdaania2c68dz8wc568q4mibrgkugrz.png"
-                        alt="instagram"
-                        style="display: inline-block; vertical-align: middle"
-                      />
-                    </a>
+                    <a href="https://www.instagram.com/Sync360_hq/" style="color: #9db5a6; text-decoration: none; font-size: 13px">Instagram</a>
                   </td>
                   <td>
-                    <a href="https://www.linkedin.com/company/Sync360">
-                      <img
-                        src="https://fsmqp1lduw.s3.us-east-1.amazonaws.com/234hzl4mhp3ls52xzcp5vwu140u4ux9k41jxn2f9.png"
-                        alt="linkedin"
-                        style="display: inline-block; vertical-align: middle"
-                      />
-                    </a>
+                    <a href="https://www.linkedin.com/company/Sync360" style="color: #9db5a6; text-decoration: none; font-size: 13px">LinkedIn</a>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
         </table>
-        <table style="width: 100%; margin-top: 2rem">
+
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin-top: 2rem">
           <tr>
             <td style="text-align: left">
-              <p>Contact us:</p>
-              <p>
-                +234201889181 or click on
-                <a href="#">www.{{store_name}}.com</a> if you prefer not to
-                receive this message you can unsubscribe
+              <p style="color: #9db5a6; margin: 0 0 6px 0">Contact us:</p>
+              <p style="color: #9db5a6; margin: 0; font-size: 14px; line-height: 22px">
+                +234 201 889 1813 or click on
+                <a href="https://www.sync360.tech" style="color: #7bbe5e">www.sync360.tech</a> if you
+                prefer not to receive this message you can unsubscribe
               </p>
             </td>
           </tr>
